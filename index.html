@@ -1,3 +1,110 @@
-<!--set up head and pertinent source calls-->
-<!--set up my body with form in a card layout-->
-<!--set up divs in the card complete with input form and button-->
+<!DOCTYPE html>
+<html lang="en"></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Giffy Buttons</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="http://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 10px;
+      }
+
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Giffy Buttons</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-log-in"></span> Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container text-center" style="font-family: fantasy">
+        <h1>Giffy Buttons</h1>
+        <p>
+          Entering a gif keyword below, will add that search to your favorites! <br>
+          Then just click your favorites to view the gif info! <br> Go on! Give it
+          a try!
+        </p>
+      </div>
+      <div class="row">
+        <span class="container col-md-10" style="float: right">
+          <form id="gif-form">
+            <label for="gif-input">Add this Gif!</label>
+            <input type="text" id="gif-input" /><br />
+
+            <!-- Button triggers new movie to be added -->
+            <input id="add-gif" type="submit" value="Add this Gif!" />
+          </form>
+        </span>
+      </div>
+      <div class="container-fluid bg-3 text-center">
+        <div class="row">
+          <div id="favorite-buttons"></div>
+        </div>
+      </div>
+      <br /><br />
+
+      <div class="container-fluid bg-3 text-center">
+        <div class="row">
+          <div id="images-container"></div>
+        </div>
+      </div>
+      <br /><br />
+
+      <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+      </footer>
+      <script src="assets/javascript/app.js"></script>
+    </div>
+  </body>
+</html>
