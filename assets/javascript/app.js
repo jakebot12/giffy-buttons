@@ -17,25 +17,42 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       console.log(response)
+      $("#images-container").empty();
+      for (var i = 0; i < response.data.length; i++) {
+        console.log("loop works")
+        var gifDiv = $("<div>");
+
+        var rating = response.data[i].rating;
+
+        var p = $("<p>").text("Rating: " + rating);
+
+        var gifImage = $("<img>");
+        gifImage.attr("src", response.data[i].images.fixed_height.url);
+
+        gifDiv.append(p);
+        gifDiv.append(gifImage);
+console.log(gifDiv)
+        $("#images-container").append(gifDiv);
+      }
       // Create a div for the gif
-      var gifDiv = $('<div class= "gif">');
+     // var gifDiv = $('<div class= "gif">');
       // Retrieve the rating data
-      var ratingData = response.Rated;
-      console.log(ratingData);
+      //var ratingData = response.Rated;
+      //console.log(ratingData);
       // Create an element where the rating data can be displayed
-      var ratingPar = $("<p>").text("Rating: " + ratingData);
+     // var ratingPar = $("<p>").text("Rating: " + ratingData);
 
       // Display rating data
-      gifDiv.append(ratingPar);
+      //gifDiv.append(ratingPar);
 
       // Creates an element to hold the image
-      var gifImage = $("<img>").attr("src", response.images.original.url);
+      //var gifImage = $("<img>").attr("src", response.images.original.url);
 
       // Appends the image
-      gifDiv.append(gifImage);
+      //gifDiv.append(gifImage);
 
       // Put the gif above the previously appended gifs.
-      $("#gif").append(gifDiv);
+     // $("#gif").append(gifDiv);
     });
   }
 
@@ -90,21 +107,7 @@ $(document).ready(function() {
     }).then(function(response) {
       var results = response.data.length;
 
-      for (var i = 0; i < results.length; i++) {
-        var gifDiv = $("<div>");
-
-        var rating = results[i].rating;
-
-        var p = $("<p>").text("Rating: " + rating);
-
-        var gifImage = $("<img>");
-        gifImage.attr("src", results[i].images.fixed_height.url);
-
-        gifDiv.append(p);
-        gifDiv.append(gifImage);
-
-        $("#image-container").append(gifDiv);
-      }
+     
     });
   });
 

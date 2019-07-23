@@ -1,3 +1,10 @@
-/* Below will be where I call elements from my html code and give them a style */
-/* Call the styling for my divs and backgrounds*/
-/* Call all the styling and colors for my fonts */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 10px;
+  }
+
+  /* Add a gray background color and some padding to the footer */
+  footer {
+    background-color: #c6f0de;
+    padding: 25px;
+  }
